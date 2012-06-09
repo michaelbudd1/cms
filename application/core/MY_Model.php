@@ -16,7 +16,7 @@ class MY_Model extends CI_Model {
    * @var       string
    * @access    protected
    */
-  protected $_primary_key = 'intId';
+  protected $_primary_key = 'id';
 
   /**
    * The table's column used to flag a record as deleted, 
@@ -25,7 +25,7 @@ class MY_Model extends CI_Model {
    * @var       string
    * @access    protected
    */
-  protected $_delete_flag = 'bolDeleted';
+  protected $_delete_flag = 'deleted';
 
   /**
    * The model's validation rules
@@ -614,7 +614,7 @@ class MY_Model extends CI_Model {
   private function _fetch_table()
   {
     if ($this->_table === NULL)
-      $this->_table = 'tbl' . plural(preg_replace('/_model$/', '', get_class($this)));
+      $this->_table = plural(preg_replace('/_model$/', '', strtolower(get_class($this))));
   }
 }
 
