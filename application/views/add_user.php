@@ -7,10 +7,10 @@
 <body>
 
 <div id="container">
-	<h1>Add a User</h1>
+    <?php $this->load->view('templates/header'); ?>
 
 	<div id="body">
-		<h2>Create</h2>
+
         <?php echo form_open('add_user/create');?>
         
             <div class="spaceBelow">
@@ -23,7 +23,7 @@
             <div class="spaceBelow">
             
                 <label for"page_content">Page Content:</label>
-                <input type="text" name="page_content" id="page_content" />
+                <textarea name="page_content" id="page_content"></textarea>
             
             </div>
             
@@ -58,6 +58,8 @@
         <p>To sample the delete method, simply click on one of the headings... blah blah.</p>
         
         
+        
+        <hr />
         
         
 	</div>
