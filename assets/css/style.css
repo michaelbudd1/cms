@@ -14,7 +14,7 @@
 
 /******************************** EXISTING PAGES CSS ***********************/
 
-.existing_pages					{ border: 1px solid #000; min-height: 100px; }
+.existing_pages					{ border: 1px solid #000; min-height: 100px; min-height: 400px; }
 .add_page_menu					{ position: absolute; border: 1px solid #000; padding: 5px; background-color: #fff; }
 .add_page_menu a, .add_page_menu a:visited	{ text-decoration: none; color: blue;  }
 .add_page_menu li				{ margin: 0 0 10px 0; }
@@ -38,4 +38,6 @@
 .nav_options li					{ float: right; margin: 0 5px 0 5px; border-left: 1px solid #000; padding: 0 0 0 5px;  }
 .nav_options li a, .nav_options li a:visited				{ text-decoration: none; color: blue; }
 .nav_options 					{ margin: 0 0 10px 0; float: right; }
+
+/******************************* DRAGGABLE CSS ****************************/
 

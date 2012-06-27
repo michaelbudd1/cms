@@ -8,6 +8,7 @@
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/cms_add_page.js"></script>
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/cms_edit_page.js"></script>
+<script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
         mode : "textareas"

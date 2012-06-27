@@ -22,7 +22,7 @@ $(function(){
 })
 
 $(function(){
-	$(".page_thumb").click(function(event){
+	$(".page_thumb").dblclick(function(event){
 		$(".add_page_menu").hide();
 		$(".edit_page_menu").hide();
 		$(".edit_page_menu").show();
@@ -34,5 +34,13 @@ $(function(){
 	})
 })
 
+
+
+// DRAGABBLE 
+$(function() {
+		$(".add_page_menu").hide();
+		$(".edit_page_menu").hide();
+		$(".page_thumb").draggable();
+});
 
 	
