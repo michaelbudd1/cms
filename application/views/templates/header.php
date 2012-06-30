@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <? $this->load->helper('url'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,6 +9,7 @@
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/cms_add_page.js"></script>
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/cms_edit_page.js"></script>
+<script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/section_thumb.js"></script>
 <script type="text/javascript" src="<? echo base_url() ?>assets/js/vendor/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
@@ -40,6 +42,16 @@ tinyMCE.init({
             	<ul>
                 	<li><?php echo anchor('menu', 'Main Menu'); ?></li>
                     <li><?php echo anchor('add_page', 'Add Page'); ?></li>
+            <li>        
+        <? 
+		if(isset($_SESSION['copy'])){
+			echo $_SESSION['copy']; 
+		} else {
+			$_SESSION['rats'] = "rats";
+			echo $_SESSION['rats'];
+		}
+		?>
+        </li>
                 </ul>
             </div><!-- closing of nav_options -->
             

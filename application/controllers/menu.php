@@ -19,6 +19,7 @@ class Menu extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data = array();
 		$this->load->view('templates/header');
 		$this->load->model('menu_model');
 			
@@ -27,10 +28,24 @@ class Menu extends CI_Controller {
 			$data['records'] = $query;
 		}
 		
+		if($query = $this->menu_model->get_existing_sections())
+		{
+			$data['sections'] = $query;
+		}
+		
+		$this->load->view('view_existing_sections', $data);
 		$this->load->view('view_existing_pages', $data);	
-
+		
 		$this->load->view('menu');
 		$this->load->view('templates/footer');
+	}
+	
+	public function paste_page()
+	{
+		$data = array();
+		$this->load->model('paste_page_model');
+		$this->paste_page_model->paste_page($data);
+		
 	}
 	
 }
