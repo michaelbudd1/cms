@@ -38,12 +38,8 @@
 |
 */
 
-$route['default_controller'] = "menu";
+$route['default_controller'] = 'menu';
 $route['404_override'] = '';
-
-$route['add_user'] = "add_user";
-$route['add_page'] = "add_page";
-
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

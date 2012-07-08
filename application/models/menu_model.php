@@ -1,36 +1,21 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class menu_model extends CI_Model {
+class Menu_model extends MY_Model {
 	
-	function get_existing_pages(){
-
-		if(isset($_GET['sectionid'])){
-			
-			$section_id = $_GET['sectionid'];
-		
-			$query = $this->db->query('SELECT * FROM page_cms WHERE deleted <> 1 AND section=' . $section_id);
-			return $query->result();
-		
+	public function get_existing_pages($section_id)
+	{
+		return $this->db->query('SELECT * FROM page_cms WHERE deleted <> 1 AND section_id=' . $section_id)->result();
+	}
+	
+	public function get_existing_sections($section_id)
+	{
+		if ($section_id) {
+			$query = $this->db->query('SELECT * FROM page_cms WHERE deleted <> 1 AND section_id=' . $section_id . ' AND sub_section = 1');
+		} else {
+			$query = $this->db->query('SELECT * FROM page_cms WHERE deleted <> 1 AND section_id=-1');
 		}
-	}
-	
-	
-	function get_existing_sections(){
-		
-		
-			if(isset($_GET['sectionid'])){
-				
-				$sectionId = $_GET['sectionid'];
-		
-				$query = $this->db->query('SELECT * FROM page_cms WHERE deleted <> 1 AND section=' . $sectionId . ' AND sub_section = 1');
-				return $query->result();
-			
-			} else {
-				
-				$query = $this->db->query('SELECT * FROM page_cms WHERE deleted <> 1 AND section=-1');
-				return $query->result();
-			}
-	}
-}
 
-?>
+		return $query->result();
+	}
+
+}
